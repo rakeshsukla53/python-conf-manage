@@ -1,0 +1,11 @@
+
+{
+  "merchant":{
+    "name": "microsoft_1",
+    "payment-product": {
+      "name": "zero-percent-loan_1"
+    }
+  }
+
+}
+

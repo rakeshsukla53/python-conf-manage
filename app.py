@@ -3,7 +3,7 @@ import pathlib
 import requests
 
 
-with open("base.json", "r") as f:
+with open("tenant.json", "r") as f:
     config = json.load(f)
 
 
