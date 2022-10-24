@@ -1,6 +1,9 @@
 {
   "env": {
     "name": "qa_3",
-    "api": "https://gorest.co.in/public/v2/users"
+    "api": "https://www.env.com/",
+    "cypress": {
+      "video-compression": true
+    }
   }
 }

@@ -7,6 +7,15 @@ class JsonManagement:
         self.base_config = self._load_base_config()
         self.override_config_values = kwargs
 
+    def recursively_merge_dict(self, current_level, override_config):
+
+        for key, value in override_config.items():
+
+            if key in current_level and isinstance(value, dict):
+                self.recursively_merge_dict(current_level[key], value)
+            else:
+                current_level[key] = value
+
     def generate_json(self):
         # return the base configuration if override values
         if not self.override_config_values:
@@ -18,7 +27,9 @@ class JsonManagement:
             file_path = base_file_path.format(key, value)
             with open(file_path, "r") as f:
                 override_config = json.load(f)
-                self.base_config.update(override_config)
+
+                current_level = self.base_config
+                self.recursively_merge_dict(current_level, override_config)
 
         return json.dumps(self.base_config, indent=2)
 
@@ -30,6 +41,6 @@ class JsonManagement:
             return config
 
 
-test_config = JsonManagement(program="version3", merchant="version1", env="version2")
+test_config = JsonManagement(program="version3", merchant="version1", env="version3")
 print(test_config.generate_json())
 

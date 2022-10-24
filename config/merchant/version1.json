@@ -3,7 +3,8 @@
   "merchant":{
     "name": "microsoft_1",
     "payment-product": {
-      "name": "zero-percent-loan_1"
+      "name": "zero-percent-loan_1",
+      "risk": 5
     }
   }
 
