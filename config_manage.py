@@ -41,6 +41,6 @@ class JsonManagement:
             return config
 
 
-test_config = JsonManagement(program="version3", merchant="version1", env="version3")
+test_config = JsonManagement(program="version3", merchant="version2", env="version3")
 print(test_config.generate_json())
 
