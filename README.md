@@ -3,6 +3,8 @@ json configuration management in python projects
 
 you can override the below config by passing your own version of `program`, `merchant` and `env`
 
+`test_config = JsonManagement(program="version3", merchant="version2", env="version3")`
+
     {
         "name": "Royal Bank of Canada",
         "program": {
